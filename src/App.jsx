@@ -7,8 +7,8 @@ function App() {
 
   const fetchEventos = async () => {
     try {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/events`);
       //const res = await axios.get('http://localhost:5000/api/events'); //Local
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/events`);
       setEventos(res.data);
     } catch (error) {
       console.error('Error al cargar eventos:', error);
